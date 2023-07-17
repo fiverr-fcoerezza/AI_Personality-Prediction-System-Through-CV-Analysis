@@ -1,8 +1,7 @@
-from fileinput import filename
 import os
 import string
 import pymysql
-from flask import Flask, render_template, request, redirect, flash, send_file, session
+from flask import Flask, render_template, request, redirect, flash, session
 from passlib.hash import sha256_crypt
 import gc
 from werkzeug.utils import secure_filename
@@ -10,13 +9,12 @@ import csv
 import base64,random
 import time,datetime
 from pyresparser import ResumeParser
-from pdfminer3.layout import LAParams, LTTextBox
+from pdfminer3.layout import LAParams
 from pdfminer3.pdfpage import PDFPage
 from pdfminer3.pdfinterp import PDFResourceManager
 from pdfminer3.pdfinterp import PDFPageInterpreter
 from pdfminer3.converter import TextConverter
 from PIL import Image
-from Courses import ds_course,web_course,android_course,ios_course,uiux_course,resume_videos,interview_videos
 import pafy
 import plotly.express as px
 import io,random
@@ -29,7 +27,7 @@ from sklearn.metrics import accuracy_score, classification_report
 from sklearn.naive_bayes import MultinomialNB
 from test_utils import *
 
-UPLOAD_FOLDER = 'C:/Users/Phoebe E. A. Memsah/Downloads/web_platform_for_aptitude_assessment-master/web_platform_for_aptitude_assessment-master/CV/'
+UPLOAD_FOLDER = '~/fiverr/fcoerezza/AI_Personality-Prediction-System-Through-CV-Analysis/CV/'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'pdf'}
 
 app = Flask(__name__)
